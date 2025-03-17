@@ -5,49 +5,64 @@ import BuyButton from "@/components/BuyButton.astro";
 <section id='bonus' class='relative py-16'>
   <div class='max-w-7xl mx-auto px-6 flex flex-col items-center gap-6'>
     <!-- Contenedor principal -->
-    <div class='max-w-7xl mx-auto px-6'>
+    <div class='max-w-5xl mx-auto px-6'>
       <h1 class='text-5xl font-bold text-center text-primary special'>
         Beneficios extras para los primeros en inscribirse
       </h1>
-      <div class='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12'>
-        {
-          [
-            {
-              imgSrc: "ruta-de-tu-imagen-1.png",
-
-              description:
-                'Las primeras <span class="font-extrabold text-primary">20</span> personas en inscribirse reciben una <span class="font-extrabold text-primary">sesión extra grupal de YOGA NIDRA</span> conmigo.',
-            },
-            {
-              imgSrc: "ruta-de-tu-imagen-2.png",
-              description:
-                'Los inscriptos <span class="font-extrabold text-primary">HOY</span> recibirán <span class="font-extrabold text-primary">2 clases grabadas extra</span> sobre técnicas de respiración avanzadas.',
-            },
-          ].map(({ imgSrc, description }) => (
-            <div class='relative'>
-              <div class='absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg transform rotate-3' />
-              <div class='relative z-10 bg-white shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'>
-                <img
-                  src={imgSrc}
-                  alt={`Imagen `}
-                  class='mx-auto mb-4 size-40 object-cover rounded-full border-4 border-white shadow-lg'
-                />
-                <p class='text-text text-lg' set:html={description} />
+      <div class='grid grid-cols-1 gap-12 items-center mt-12'>
+        <div class='relative'>
+          <div
+            class='absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg transform rotate-3'
+          >
+          </div>
+          <div
+            class='relative z-10 bg-white shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'
+          >
+            <img
+              src='ruta-de-tu-imagen-2.png'
+              class='mx-auto mb-4 size-60 object-cover rounded-full border-4 border-white shadow-lg'
+            />
+            <div class='text-text text-3xl space-y-6'>
+              <p>
+                Las personas que se inscriban
+                <span
+                  class='font-extrabold text-primary animate-bounce inline-block'
+                  >HOY</span
+                >
+                recibirán:
+              </p>
+              <div class='flex flex-col gap-4'>
+                <div class='bg-primary/5 p-4 rounded-lg'>
+                  <span class='font-extrabold text-primary text-3xl block'>
+                    🎁 1 Clase Grabada Extra
+                  </span>
+                  <span class='text-2xl text-text/80'>
+                    Técnicas de respiración avanzadas para dominar tu práctica
+                  </span>
+                </div>
+                <div class='bg-primary/5 p-4 rounded-lg'>
+                  <span class='font-extrabold text-primary text-3xl block'>
+                    ✨ 3 Ejercicios de Mindfulness
+                  </span>
+                  <span class='text-2xl text-text/80'>
+                    Prácticas especiales para integrar en tu rutina diaria
+                  </span>
+                </div>
               </div>
             </div>
-          ))
-        }
-      </div>
-      <div class='text-center flex flex-col items-center gap-6 mt-12'>
-        <a href='#stack' class='animate-float'
-          ><button
-            class='py-6 lg:px-24 px-16 div-large text-white rounded-full transition-colors cursor-pointer text-2xl font-bold shadow-lg'
-          >
-            Reserva tu plaza
-          </button></a
-        >
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div class='text-center flex flex-col items-center gap-6 mt-12'>
+    <a href='#stack' class='animate-float'
+      ><button
+        class='py-6 lg:px-24 px-16 div-large text-white rounded-full transition-colors cursor-pointer text-2xl font-bold shadow-lg'
+      >
+        Reserva tu plaza
+      </button></a
+    >
   </div>
 </section>
 
