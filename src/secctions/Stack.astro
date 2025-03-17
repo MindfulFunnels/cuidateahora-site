@@ -32,16 +32,16 @@ import BuyButton from "@/components/BuyButton.astro";
           <div
             class='flex flex-col md:flex-row gap-6 items-center justify-center'
           >
-            <div class='flex items-center relative'>
+            <div class='flex items-center relative md:gap-6'>
               <!-- Etiqueta de precio anterior -->
               <div class='relative'>
-                <p
-                  class='text-text/50 font-bold text-4xl md:text-5xl line-through rotate-[-12deg] mr-4'
+                <h1
+                  class='text-text/50 font-bold text-7xl md:text-8xl line-through rotate-[-12deg] mr-4'
                 >
                   187€
-                </p>
+                </h1>
                 <span
-                  class='absolute -top-3 right-0 text-xs font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full'
+                  class='absolute -top-3 right-0 text-xs fonst-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full'
                 >
                   ANTES
                 </span>
@@ -58,7 +58,7 @@ import BuyButton from "@/components/BuyButton.astro";
                   <span class='text-sm text-yellow-600'>20% OFF</span>
                 </div>
                 <p
-                  class='special text-8xl font-bold hover:scale-105 transition-transform'
+                  class='special text-6xl md:text-8xl font-bold hover:scale-105 transition-transform'
                 >
                   127€
                 </p>
@@ -79,15 +79,6 @@ import BuyButton from "@/components/BuyButton.astro";
         </div>
       </div>
     </div>
-    <!-- Botón con más espacio -->
-    <!-- <div class='mt-4'>
-      <BuyButton />
-    </div> -->
-
-    <!-- Imagen con sombra y bordes -->
-    <!-- <div class='mt-12 relative'>
-      <img src='/stack.png' alt='' class='max-w-full rounded-xl' />
-    </div> -->
   </div>
 </section>
 
