@@ -1,0 +1,84 @@
+---
+import BuyButton from "@/components/BuyButton.astro";
+---
+
+<section id='bonus' class='relative py-16'>
+  <div class='max-w-7xl mx-auto px-6 flex flex-col items-center gap-6'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center text-primary'>
+      Introduce la palabra <span class='special'>CUPONVIP</span> y obtén un
+      <span class='special'>20% OFF</span>
+    </h2>
+    <h3 class='text-primary font-bold text-lg'>En la sección de la imagen</h3>
+    <img src='/cupon.png' alt='' class='w-1/2 shadow-lg' />
+    <div class='text-center'>
+      <BuyButton text='Unirme a la membresía' />
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class='max-w-7xl mx-auto px-6'>
+      <h1 class='text-3xl font-bold text-center text-primary special'>
+        Beneficios extras para los primeros en inscribirse
+      </h1>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12'>
+        {
+          [
+            {
+              imgSrc: "ruta-de-tu-imagen-1.png",
+              title: "ACCIÓN RÁPIDA",
+              description:
+                'Las primeras <span class="font-extrabold text-primary">20</span> personas en inscribirse reciben una <span class="font-extrabold text-primary">sesión extra grupal de YOGA NIDRA</span> conmigo.',
+            },
+            {
+              imgSrc: "ruta-de-tu-imagen-2.png",
+              title: "PREMIUM",
+              description:
+                'Los inscriptos <span class="font-extrabold text-primary">HOY</span> recibirán <span class="font-extrabold text-primary">2 clases grabadas extra</span> sobre técnicas de respiración avanzadas.',
+            },
+          ].map(({ imgSrc, title, description }) => (
+            <div class='relative'>
+              <div class='absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg transform rotate-3' />
+              <div class='relative z-10 bg-white shadow-lg rounded-lg p-8 text-center transform transition-transform hover:scale-105 duration-300'>
+                <img
+                  src={imgSrc}
+                  alt={`Imagen del ${title}`}
+                  class='mx-auto mb-4 size-40 object-cover rounded-full border-4 border-white shadow-lg'
+                />
+                <h3 class='text-3xl font-bold mb-4 text-primary'>{title}</h3>
+                <p class='text-text text-lg' set:html={description} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .special {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+</style>

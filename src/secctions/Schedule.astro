@@ -1,0 +1,297 @@
+---
+import BuyButton from "@/components/BuyButton.astro";
+import Summary from "@/components/Summary.astro";
+
+export const summariesFirstMonth = [
+  {
+    title: "Semana 1",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría respiración: respiración abdominal-invertida-profunda- porque inhalamos y exhalamos por la nariz-sistema nervioso 1",
+          "Ejercicio: Respiración atenta",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: [
+          "Hay siempre un espacio de 10 minutos al inicio de la sesión para resolver dudas",
+          "Movimiento articular y respiración",
+        ],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: [
+          "Siempre antes de la relajación realizamos suaves movimientos para soltar un poco el cuerpo",
+          "Relajación para soltar y fluir. Calma cuerpo y mente",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Semana 2",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría respiración: sistema nervioso 2",
+          "Ejercicio: Respiración alterna",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Eliminar tensiones"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Paz interior. Atención plena"],
+      },
+    ],
+  },
+  {
+    title: "Semana 3",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: ["Teoría: Las bases de flexibilidad"],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Conecta con tu flexibilidad"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Suelta y libera toda tensión"],
+      },
+    ],
+  },
+  {
+    title: "Semana 4",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Gestión de las emociones",
+          "Ejercicio: Lugar Seguro",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Para el dolor de espalda"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Escanea todo tu cuerpo y suelta a través de la respiración"],
+      },
+    ],
+  },
+];
+
+export const summariesSecondMonth = [
+  {
+    title: "Semana 5",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Saludos al sol",
+          "Ejercicio: Práctica saludos al sol",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Para las mañanas. Comienza el día con energía"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Relajación sanadora. Renueva cada célula de tu cuerpo."],
+      },
+    ],
+  },
+  {
+    title: "Semana 6",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: [
+          "Teoría: Meditación + beneficios",
+          "Ejercicio: meditación 40 respiraciones",
+        ],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Para dormir bien"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Relax total. Relaja cuerpo, mente y emociones"],
+      },
+    ],
+  },
+  {
+    title: "Semana 7",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: ["Teoría: Clase de Yoga para cuando tenemos poco tiempo 1"],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Para liberar el estrés y la ansiedad"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Duerme profundamente sin ansiedad."],
+      },
+    ],
+  },
+  {
+    title: "Semana 8",
+    content: [
+      {
+        label: "CLASE GRABADA – 15minutos",
+        bullets: ["Clase: Clase de Yoga para cuando tenemos poco tiempo 2"],
+      },
+      {
+        label: "CLASE DE YOGA – 1:15",
+        bullets: ["Para balancear energéticamente"],
+      },
+      {
+        label: "RELAJACIÓN – 45minutos",
+        bullets: ["Relajación para un sueño y descanso profundo."],
+      },
+    ],
+  },
+];
+---
+
+<section id='schedule' class='relative py-16'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <h2 class='text-4xl md:text-5xl font-bold text-center mb-12 text-primary'>
+      Cronograma del Programa
+    </h2>
+
+    <div class='grid md:grid-cols-2 gap-8 lg:gap-12 mb-12'>
+      <!-- Primer Mes -->
+      <div class='space-y-4 accordion-group'>
+        <h3 class='text-2xl font-semibold text-primary mb-6'>Primer Mes</h3>
+        {
+          summariesFirstMonth.map(({ title, content }) => (
+            <Summary title={title}>
+              <div class='space-y-6'>
+                {content.map(({ label, bullets }) => (
+                  <div class='space-y-2'>
+                    <h4 class='font-semibold text-primary'>{label}</h4>
+                    <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                      {bullets.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Summary>
+          ))
+        }
+      </div>
+
+      <!-- Segundo Mes -->
+      <div class='space-y-4 accordion-group'>
+        <h3 class='text-2xl font-semibold text-primary mb-6'>Segundo Mes</h3>
+        {
+          summariesSecondMonth.map(({ title, content }) => (
+            <Summary title={title}>
+              <div class='space-y-6'>
+                {content.map(({ label, bullets }) => (
+                  <div class='space-y-2'>
+                    <h4 class='font-semibold text-primary'>{label}</h4>
+                    <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                      {bullets.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Summary>
+          ))
+        }
+      </div>
+    </div>
+    <a
+      href='https://wa.me/34658475845'
+      target='_blank'
+      class='px-10 mb-12 text-white py-3 rounded-full bg-primary hover:bg-secondary transition-colors cursor-pointer inline-flex items-center gap-2'
+    >
+      <span>❓</span> ¿Tienes dudas? Contáctanos
+    </a>
+    <div class='text-center flex flex-col items-center gap-6'>
+      <h3 class='text-2xl font-semibold text-primary mb-6'>
+        Introduce la palabra <span class='special'>CUPONVIP</span> y obtén un
+        <span class='special'>20% OFF</span>
+      </h3>
+      <h3 class='text-primary font-bold text-lg'>En la sección de la imagen</h3>
+      <img src='/cupon.png' alt='' class='w-1/2 shadow-lg' />
+      <BuyButton text='Click Aquí para empezar' />
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupAccordion() {
+    const accordionGroups = document.querySelectorAll(".accordion-group");
+
+    accordionGroups.forEach((group) => {
+      const dropdowns = group.querySelectorAll(".week-dropdown");
+      let activeDropdown: HTMLElement | null = null;
+
+      dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector("button");
+        const content = dropdown.querySelector(".content") as HTMLElement;
+
+        if (button && content) {
+          button.addEventListener("click", () => {
+            const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+            // Cerrar el dropdown activo si existe y es diferente al actual
+            if (activeDropdown && activeDropdown !== dropdown) {
+              const activeButton = activeDropdown.querySelector("button");
+              const activeContent = activeDropdown.querySelector(".content");
+
+              if (activeButton && activeContent) {
+                activeButton.setAttribute("aria-expanded", "false");
+                activeContent.classList.remove("expanded");
+              }
+            }
+
+            // Alternar el estado del dropdown actual
+            button.setAttribute("aria-expanded", (!isExpanded).toString());
+            content.classList.toggle("expanded");
+
+            // Actualizar el dropdown activo
+            activeDropdown = isExpanded ? null : (dropdown as HTMLElement);
+          });
+        }
+      });
+    });
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", setupAccordion);
+
+  // Ejecutar cuando Astro haya completado la hidratación
+  document.addEventListener("astro:page-load", setupAccordion);
+</script>
+
+<style>
+  .accordion-group {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 600px) {
+    .week-dropdown button {
+      font-size: 1.1rem;
+    }
+  }
+</style>

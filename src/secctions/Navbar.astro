@@ -1,0 +1,105 @@
+---
+// Definimos las clases reutilizables
+const linkClasses = "text-text hover:text-primary transition-colors";
+const mobileLinkClasses =
+  "block px-3 py-2 text-text hover:text-primary rounded-md";
+---
+
+<nav
+  class='fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b border-primary/10'
+>
+  <div class='max-w-7xl mx-auto px-4'>
+    <div class='flex justify-between items-center h-16'>
+      <!-- Logo -->
+      <!-- <a
+        href='#inicio'
+        class='text-xl font-bold text-primary'
+        style='font-family: poppins;'>Lucía Martínez Bienestar</a
+      > -->
+
+      <a href='/'>
+        <img src='/logo.png' alt='Logo' class='size-12' />
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <div class='hidden md:flex space-x-8'>
+        <a href='#inicio' class={linkClasses}>Inicio</a>
+        <a href='#plan' class={linkClasses}>Plan</a>
+        <a href='#bonus' class={linkClasses}>Bonus</a>
+        <a href='#testimonials' class={linkClasses}>Testimonios</a>
+        <a href='#schedule' class={linkClasses}>Cronograma</a>
+        <a href='#faq' class={linkClasses}>FAQ</a>
+        <a href='#about' class={linkClasses}>Sobre mi</a>
+      </div>
+
+      <!-- Botón móvil -->
+      <button class='md:hidden text-text hover:text-primary' id='menuBtn'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-6 w-6'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M4 6h16M4 12h16M4 18h16'></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    class='hidden md:hidden bg-background/95 backdrop-blur-sm w-full absolute'
+    id='mobileMenu'
+  >
+    <div class='px-2 pt-2 pb-3 space-y-1'>
+      <a href='#inicio' class={mobileLinkClasses}>Inicio</a>
+      <a href='#plan' class={mobileLinkClasses}>Plan</a>
+      <a href='#bonus' class={mobileLinkClasses}>Bonus</a>
+      <a href='#testimonials' class={mobileLinkClasses}>Testimonios</a>
+      <a href='#schedule' class={mobileLinkClasses}>Cronograma</a>
+      <a href='#faq' class={mobileLinkClasses}>FAQ</a>
+      <a href='#about' class={mobileLinkClasses}>Sobre mi</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu?.classList.toggle("hidden");
+  });
+
+  // Cierra el menú al hacer clic fuera de él
+  document.addEventListener("click", (e) => {
+    if (
+      e.target instanceof Node &&
+      !mobileMenu?.contains(e.target) &&
+      !menuBtn?.contains(e.target)
+    ) {
+      mobileMenu?.classList.add("hidden");
+    }
+  });
+
+  // Cierra el menú al hacer clic en un enlace
+  document.querySelectorAll("#mobileMenu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+</script>
+
+<style>
+  .title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+</style>
