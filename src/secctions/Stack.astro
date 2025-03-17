@@ -1,5 +1,6 @@
 ---
 import BuyButton from "@/components/BuyButton.astro";
+import Countdown from "@/components/Countdown";
 ---
 
 <section id='stack' class='relative py-16'>
@@ -9,15 +10,11 @@ import BuyButton from "@/components/BuyButton.astro";
   >
     <div class='flex flex-col justify-center items-center gap-6 w-full'>
       <!-- Título con decoración -->
-      <div class='flex flex-col gap-6 w-full'>
+      <div class='flex flex-col gap-6 w-full items-center'>
         <div class='relative'>
-          <span
-            class='absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-emerald-500 bg-emerald-500/10 px-4 py-1 rounded-full'
-          >
-            ¡ÚLTIMA OPORTUNIDAD!
-          </span>
           <h3
             class='mt-12 title text-6xl font-bold flex flex-row items-center justify-center gap-2 text-primary'
+            style="font-family: 'Caprasimo', cursive"
           >
             <img src='/alert.gif' alt='' class='size-12 md:size-14' />
             ¡Oferta Especial!
@@ -27,102 +24,111 @@ import BuyButton from "@/components/BuyButton.astro";
 
         <!-- Contenedor de precios con más efectos -->
         <div
-          class='w-full bg-gradient-to-br from-yellow-100/10 to-yellow-400/10 rounded-3xl p-8 md:p-10 shadow-2xl border border-yellow-200/20 backdrop-blur-sm hover:shadow-yellow-500/10 hover:border-yellow-300/30 transition-all duration-300'
+          class='bg-accent/50 w-full rounded-3xl p-8 md:p-10 transition-all duration-300 bg-gradient-to-tr shadow-lg to-light/10'
         >
-          <div
-            class='flex flex-col md:flex-row gap-6 items-center justify-center'
-          >
-            <div class='flex items-center relative md:gap-6'>
+          <div class='flex flex-col gap-6 items-center justify-center'>
+            <div class='flex items-center relative gap-6 flex-col'>
+              <Countdown deadline='2025-03-21' client:load />
+              <p class='text-lg text-text/80 font-medium'>
+                Oferta válida hasta el viernes 21 de marzo
+              </p>
               <!-- Etiqueta de precio anterior -->
-              <div class='relative'>
-                <h1
-                  class='text-text/50 font-bold text-7xl md:text-8xl line-through rotate-[-12deg] mr-4'
-                >
-                  187€
-                </h1>
+              <h2
+                class='text-xl md:text-2xl font-bold text-center text-text max-w-xl bg-white/30 shadow-lg p-4 rounded-lg'
+              >
+                Introduce la palabra <span class='special'>CUPONVIP</span> y obtén
+                un
+                <span class='special'>30% OFF</span> sobre el precio original
+              </h2>
+            </div>
+            <!-- Precio actual con efectos -->
+            <div class='flex flex-col items-start'>
+              <div class='flex items-center gap-2 flex-col'>
                 <span
-                  class='absolute -top-3 right-0 text-xs fonst-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full'
+                  class='text-3xl font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full animate-pulse'
                 >
-                  ANTES
+                  AHORRA 60€
                 </span>
-              </div>
-
-              <!-- Precio actual con efectos -->
-              <div class='flex flex-col items-start'>
-                <div class='flex items-center gap-2'>
-                  <span
-                    class='text-sm font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full animate-pulse'
-                  >
-                    AHORRA 60€
-                  </span>
-                  <span class='text-sm text-yellow-600'>20% OFF</span>
-                </div>
-                <p
-                  class='special text-6xl md:text-8xl font-bold hover:scale-105 transition-transform'
+                <span class='text-3xl text-yellow-600'>30% OFF</span>
+                <h1
+                  class='text-green-500 text-6xl md:text-9xl font-bold hover:scale-105 transition-transform'
                 >
                   127€
-                </p>
+                </h1>
               </div>
+            </div>
+            <div class='relative'>
+              <span
+                class='absolute -top-5 right-0 text-xs fonst-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full'
+              >
+                Precio normal
+              </span>
+              <h1 class='text-text font-bold text-2xl md:text-5xl mr-4'>
+                Precio original: <span class='line-through'>187€</span>
+              </h1>
             </div>
           </div>
 
           <div class='mt-8 space-y-3'>
             <p
-              class='text-text text-lg font-bold animate-bounce bg-emerald-500/10 inline-block px-6 py-2 rounded-full shadow-lg'
+              class='special text-text text-lg font-bold animate-bounce bg-emerald-500/10 inline-block px-6 py-2 rounded-full shadow-lg'
             >
-              ¡Solo quedan pocas plazas disponibles!
-            </p>
-            <p class='text-lg text-text/80 font-medium'>
-              Oferta válida hasta el viernes 21 de marzo
+              ¡Solo 40 plazas disponibles!
             </p>
           </div>
+          <div class='text-center'>
+            <BuyButton text='Unirme al programa' />
+          </div>
+          <img src='/stack.png' alt='' class='w-full h-full' />
         </div>
       </div>
     </div>
   </div>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
+
+    .special {
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      background: radial-gradient(
+          ellipse farthest-corner at right bottom,
+          #fedb37 0%,
+          #fdb931 8%,
+          #9f7928 30%,
+          #8a6e2f 40%,
+          transparent 80%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at left top,
+          #ffffff 0%,
+          #ffffac 8%,
+          #d1b464 25%,
+          #5d4a1f 62.5%,
+          #5d4a1f 100%
+        );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .title {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
 </section>
-
-<style>
-  .special {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    background: radial-gradient(
-        ellipse farthest-corner at right bottom,
-        #fedb37 0%,
-        #fdb931 8%,
-        #9f7928 30%,
-        #8a6e2f 40%,
-        transparent 80%
-      ),
-      radial-gradient(
-        ellipse farthest-corner at left top,
-        #ffffff 0%,
-        #ffffac 8%,
-        #d1b464 25%,
-        #5d4a1f 62.5%,
-        #5d4a1f 100%
-      );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  .title {
-    animation: float 3s ease-in-out infinite;
-  }
-</style>

@@ -175,7 +175,7 @@ export const summariesSecondMonth = [
     <div class='grid md:grid-cols-2 gap-8 lg:gap-12 mb-12'>
       <!-- Primer Mes -->
       <div class='space-y-4 accordion-group'>
-        <h3 class='text-2xl font-semibold text-primary mb-6'>Primer Mes</h3>
+        <h3 class='text-2xl font-bold text-text mb-6'>Primer Mes</h3>
         {
           summariesFirstMonth.map(({ title, content }) => (
             <Summary title={title}>
@@ -198,7 +198,7 @@ export const summariesSecondMonth = [
 
       <!-- Segundo Mes -->
       <div class='space-y-4 accordion-group'>
-        <h3 class='text-2xl font-semibold text-primary mb-6'>Segundo Mes</h3>
+        <h3 class='text-2xl font-bold text-text mb-6'>Segundo Mes</h3>
         {
           summariesSecondMonth.map(({ title, content }) => (
             <Summary title={title}>
@@ -219,21 +219,14 @@ export const summariesSecondMonth = [
         }
       </div>
     </div>
-    <a
-      href='https://wa.me/34658475845'
-      target='_blank'
-      class='px-10 mb-12 text-white py-3 rounded-full bg-primary hover:bg-secondary transition-colors cursor-pointer inline-flex items-center gap-2'
-    >
-      <span>❓</span> ¿Tienes dudas? Contáctanos
-    </a>
     <div class='text-center flex flex-col items-center gap-6'>
-      <h3 class='text-2xl font-semibold text-primary mb-6'>
-        Introduce la palabra <span class='special'>CUPONVIP</span> y obtén un
-        <span class='special'>20% OFF</span>
-      </h3>
-      <h3 class='text-primary font-bold text-lg'>En la sección de la imagen</h3>
-      <img src='/cupon.png' alt='' class='w-1/2 shadow-lg' />
-      <BuyButton text='Click Aquí para empezar' />
+      <a href='#stack' class='animate-float'
+        ><button
+          class='py-6 lg:px-24 px-16 div-large text-white rounded-full transition-colors cursor-pointer text-2xl font-bold shadow-lg'
+        >
+          Click Aquí para empezar
+        </button></a
+      >
     </div>
   </div>
 </section>
@@ -293,5 +286,23 @@ export const summariesSecondMonth = [
     .week-dropdown button {
       font-size: 1.1rem;
     }
+  }
+  .div-large {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
   }
 </style>
