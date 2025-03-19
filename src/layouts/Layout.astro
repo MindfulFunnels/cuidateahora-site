@@ -14,6 +14,20 @@ const { title } = Astro.props;
     <link rel='icon' type='image/svg+xml' href='/logo2.png' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+    <meta
+      name='description'
+      content='Cuídate Ahora, un programa de Yoga y mindfulness de 16 clases en vivo, 8 clases grabadas, comunidad de apoyo privada y material de apoyo para cambiar tu vida. Diseñado y pensado al detalle por Lucía Martínez, instructora de yoga, relajación y mindfulness.'
+    />
+    <meta property='og:title' content={title} />
+    <meta
+      property='og:description'
+      content='Cuídate Ahora, un programa de Yoga y mindfulness de 16 clases en vivo, 8 clases grabadas, comunidad de apoyo privada y material de apoyo para cambiar tu vida. Diseñado y pensado al detalle por Lucía Martínez, instructora de yoga, relajación y mindfulness.'
+    />
+    <meta property='og:image' content='https://cuidateahora.site/og.png' />    
+    <meta property='og:url' content='https://cuidateahora.site' />
+    <meta property='og:type' content='website' />
+    <meta property='og:locale' content='es_ES' />
+    <meta property='og:site_name' content='Cuídate Ahora' />
   </head>
   <body class='bg-background min-h-screen w-full'>
     <slot />
