@@ -47,7 +47,7 @@ const Countdown = ({ deadline }: { deadline: string }) => {
   if (timeLeft.live) {
     return (
       <div className='flex items-center justify-center w-full text-lg font-bold'>
-        ¡Estamos en vivo!
+        ¡Oferta finalizada!
       </div>
     );
   }
